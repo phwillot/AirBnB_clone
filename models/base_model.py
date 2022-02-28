@@ -24,11 +24,11 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        """returns a dictionary containing all keys/values of 
+        """returns a dictionary containing all keys/values of
         __dict__ of the instance"""
         createdISO = datetime.isoformat(self.created_at)
         updatedISO = datetime.isoformat(self.updated_at)
         self.__dict__["__class__"] = self.__class__.__name__
-        self.__dict__["created_at"] =  createdISO
+        self.__dict__["created_at"] = createdISO
         self.__dict__["updated_at"] = updatedISO
         return self.__dict__
