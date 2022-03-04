@@ -1,16 +1,21 @@
 #!/usr/bin/python3
 """This module contain the terminal of the Hbnb project"""
 import cmd
-
-from attr import attributes
 from models.base_model import BaseModel
+from models.user import User
+from models.city import City
+from models.amenity import Amenity
+from models.state import State
+from models.place import Place
+from models.review import Review
 from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
     """Class that handle the terminal functionality"""
     prompt = "(hbnb) "
-    classes = ["BaseModel"]
+    classes = ["BaseModel", "User", "State", "City", "Amenity",
+               "Place", "Review"]
 
     def do_quit(self, arg):
         """Exits the shell"""
@@ -31,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
         elif arg in self.classes:
-            newInstance = BaseModel()
+            newInstance = eval(arg)()
             storage.save()
             print(newInstance.id)
         else:
