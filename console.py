@@ -18,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
                "Place", "Review"]
 
     def do_quit(self, arg):
-        """Exits the shell"""
+        """Exits the shell with the command quit"""
         return True
 
     def do_EOF(self, arg):
