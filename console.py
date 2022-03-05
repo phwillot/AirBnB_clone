@@ -107,7 +107,8 @@ class HBNBCommand(cmd.Cmd):
             for value in all_instances.values():
                 if arguments[0] == value.__class__.__name__:
                     array.append(str(value))
-            print(array)
+            if len(array) > 0:
+                print(array)
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id by adding
