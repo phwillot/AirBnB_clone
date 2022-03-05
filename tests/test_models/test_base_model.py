@@ -13,4 +13,3 @@ class TestBaseModel(unittest.TestCase):
         """Checking documentation of BaseModel"""
         module = len(base_model.__doc__)
         self.assertGreater(module, 0)
-
