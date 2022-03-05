@@ -7,6 +7,7 @@ import models
 
 class BaseModel:
     """This class defines all common attributes/methods for other classes"""
+
     def __init__(self, *args, **kwargs):
         """Initilization of the instance of the class"""
         if len(kwargs) == 0:

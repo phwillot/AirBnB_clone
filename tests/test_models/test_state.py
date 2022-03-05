@@ -9,6 +9,7 @@ from models.base_model import BaseModel
 
 class TestBaseModel(unittest.TestCase):
     """Class that test BaseModel"""
+
     def test_doc(self):
         """Checking documentation of BaseModel"""
         module = len(base_model.__doc__)
