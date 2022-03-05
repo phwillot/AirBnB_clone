@@ -2,8 +2,15 @@
 """Unittest for base_model.py
 """
 import unittest
+import pycodestyle
+from models import base_model
+from models.base_model import BaseModel
 
 
 class TestBaseModel(unittest.TestCase):
     """Class that test BaseModel"""
-    pass
+    def test_doc(self):
+        """Checking documentation of BaseModel"""
+        module = len(base_model.__doc__)
+        self.assertGreater(module, 0)
+
