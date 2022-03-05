@@ -23,6 +23,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """Ends the shell with CTRL+D (EOF)"""
+        print()
         return True
 
     def emptyline(self):
@@ -98,7 +99,8 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             for value in all_instances.values():
                 array.append(str(value))
-            print(array)
+            if len(array) > 0:
+                print(array)
         elif arguments[0] not in self.classes:
             print("** class doesn't exist **")
         else:
