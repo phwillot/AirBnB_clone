@@ -9,6 +9,7 @@ from models.state import State
 from models.place import Place
 from models.review import Review
 from models import storage
+import shlex
 
 
 class HBNBCommand(cmd.Cmd):
@@ -114,7 +115,8 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """Updates an instance based on the class name and id by adding
         or updating attribute (save change to JSON file)"""
-        arguments = arg.split(" ")
+        line = arg.replace(",", "")
+        arguments = shlex.split(line)
         if len(arg) == 0:
             print("** class name missing **")
         elif arguments[0] not in self.classes:
@@ -134,7 +136,7 @@ class HBNBCommand(cmd.Cmd):
                     if len(arguments) >= 4:
                         strLine = f"{arguments[0]}.{arguments[1]}"
                         setattr(all_instances[strLine],
-                                arguments[2], arguments[3][1: -1])
+                                arguments[2], arguments[3])
                         storage.save()
                     break
                 else:
