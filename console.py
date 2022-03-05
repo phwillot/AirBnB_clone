@@ -13,6 +13,7 @@ from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """Class that handle the terminal functionality"""
+
     prompt = "(hbnb) "
     classes = ["BaseModel", "User", "State", "City", "Amenity",
                "Place", "Review"]

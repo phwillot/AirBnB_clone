@@ -16,10 +16,8 @@ class FileStorage:
     serializes instance to a JSON file and deserializes
     JSON file to instances"""
 
-    def __init__(self):
-        """initialization of the instance"""
-        self.__file_path = "file.json"
-        self.__objects = {}
+    __file_path = "file.json"
+    __objects = {}
 
     def all(self):
         """Returns the dictionary __objects"""
@@ -45,5 +43,5 @@ class FileStorage:
                 dictJson = json.load(file)
                 for key, value in dictJson.items():
                     self.__objects[key] = eval(value["__class__"])(**value)
-        except Exception as e:
+        except Exception:
             pass
