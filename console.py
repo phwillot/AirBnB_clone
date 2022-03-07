@@ -36,6 +36,8 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, arg):
         """Creates a new instance of BaseModel
         saves it (to the JSON file) and print the ID"""
+        line = arg.replace(",", "")
+        arguments = shlex.split(line)
         if len(arg) == 0:
             print("** class name missing **")
         elif arg in self.classes:
@@ -48,7 +50,8 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """Prints the string representation of an instance
         based on the clss name and id"""
-        arguments = arg.split(" ")
+        line = arg.replace(",", "")
+        arguments = shlex.split(line)
         if len(arg) == 0:
             print("** class name missing **")
         elif arguments[0] not in self.classes:
@@ -71,7 +74,8 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         """Deletes an instance based on the class name id
         (Saving the change into JSON file)"""
-        arguments = arg.split(" ")
+        line = arg.replace(",", "")
+        arguments = shlex.split(line)
         if len(arg) == 0:
             print("** class name missing **")
         elif arguments[0] not in self.classes:
@@ -95,7 +99,8 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """Prints all string representation of all instances
         based or not on the class name"""
-        arguments = arg.split(" ")
+        line = arg.replace(",", "")
+        arguments = shlex.split(line)
         all_instances = storage.all()
         array = []
         if len(arg) == 0:
