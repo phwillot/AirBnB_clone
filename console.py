@@ -62,7 +62,8 @@ class HBNBCommand(cmd.Cmd):
             found = False
             all_instances = storage.all()
             for value in all_instances.values():
-                if arguments[1] == value.to_dict()['id']:
+                if arguments[0] == value.to_dict()['__class__'] \
+                        and arguments[1] == value.to_dict()['id']:
                     print(value)
                     found = True
                     break
@@ -86,7 +87,8 @@ class HBNBCommand(cmd.Cmd):
             found = False
             all_instances = storage.all()
             for key, value in all_instances.items():
-                if arguments[1] == value.to_dict()['id']:
+                if arguments[0] == value.to_dict()['__class__'] \
+                        and arguments[1] == value.to_dict()['id']:
                     all_instances.pop(key)
                     storage.save()
                     found = True
