@@ -1,7 +1,10 @@
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   color: #484848;
   font-size: 14px;
   font-family: Circular,"Helvetica Neue",Helvatica,Arial,sans-serif; 
