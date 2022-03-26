@@ -69,3 +69,7 @@ This command will update the attribute name of the instance User with the id pas
 ```sh
 update User 3f4c79f6-d40e-4d4c-936e-c224412137e6 name "Georges"
 ```
+
+## web_static
+
+In this folder, you can find the HTML and the CSS used for the static representation of the web page.
